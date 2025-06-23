@@ -66,7 +66,7 @@ This plugin is built with TypeScript and the Obsidian API.
 ### Setup
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/obsidian-question-for-ai.git
+git clone https://github.com/davidemodesto/obsidian-question-for-ai.git
 
 # Install dependencies
 npm install
@@ -107,7 +107,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 🐛 Issues & Feature Requests
 
-Found a bug or have a feature idea? [Open an issue](https://github.com/yourusername/obsidian-question-for-ai/issues) on GitHub.
+Found a bug or have a feature idea? [Open an issue](https://github.com/davidemodesto/obsidian-question-for-ai/issues) on GitHub.
 
 ---
 
