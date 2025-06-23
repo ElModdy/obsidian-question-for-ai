@@ -6,6 +6,7 @@ export default class QuestionForAIPlugin extends Plugin {
 		this.addCommand({
 			id: 'create-ai-question',
 			name: 'Create AI Question from Highlight',
+			hotkeys: [{ modifiers: ['Mod', 'Shift'], key: 'q' }],
 			editorCallback: async (editor, view) => {
 				const selection = editor.getSelection();
 				if (!selection) {
@@ -15,7 +16,7 @@ export default class QuestionForAIPlugin extends Plugin {
 
 				const folder = 'AIQA';
 				const uniqueId = Date.now();
-				const sanitizedText = selection.replace(/\[\[|\]\]/g, '').trim(); // Remove brackets and trim
+				const sanitizedText = selection.replace(/\[\[|\]\]/g, ''); // Remove brackets only
 				const filename = `${folder}/Q-${uniqueId}.md`;
 
 				// Ensure folder exists
@@ -43,12 +44,6 @@ export default class QuestionForAIPlugin extends Plugin {
 				editor.replaceSelection(linkText);
 
 				new Notice(`AI Question created: ${filename}`);
-
-				// Optional: Open the newly created note
-				const tFile = this.app.vault.getFileByPath(filename);
-				if (tFile) {
-					await this.app.workspace.getLeaf().openFile(tFile);
-				}
 			}
 		});
 	}

@@ -5,17 +5,19 @@ Transform highlighted text into formatted Q&A pages, perfect for AI interactions
 ## 🚀 Features
 
 - **One-Click Q&A Creation**: Highlight any text and instantly create a formatted question page
+- **Keyboard Shortcut**: Quick access with `Cmd+Shift+Q` (Mac) or `Ctrl+Shift+Q` (Windows/Linux)
 - **AI-Ready Format**: Pages are pre-formatted with Question and Answer sections
+- **Preserves Formatting**: Maintains original whitespace and text formatting
+- **Stay Focused**: Remain on your current page while Q&A notes are created in the background
 - **Smart Organization**: All Q&A files are stored in a dedicated `AIQA` folder
 - **Auto-Generated Links**: Original text is replaced with clean links to your Q&A pages
-- **Instant Access**: New Q&A pages open automatically for immediate use
 
 ## 📖 How It Works
 
 1. **Highlight** any text you want to ask an AI about
-2. **Run** the command "Create AI Question from Highlight" (Ctrl/Cmd+P)
-3. **Get** a formatted page that opens automatically with your question ready
-4. **Paste** the AI's response after the "Answer:" section
+2. **Press `Cmd+Shift+Q`** (or use Command Palette: "Create AI Question from Highlight")
+3. **Stay focused** on your current page while a formatted Q&A note is created
+4. **Click the generated link** when ready to add the AI's response
 
 ### Example Output
 
@@ -59,6 +61,10 @@ Your original text gets replaced with: `[[AIQA/Q-1719172245123.md|Q: What are th
 
 The plugin works out of the box with no configuration needed. All Q&A files are automatically organized in the `AIQA` folder.
 
+### Keyboard Shortcut
+- **Default**: `Cmd+Shift+Q` (Mac) or `Ctrl+Shift+Q` (Windows/Linux)
+- **Customize**: Settings → Hotkeys → Search for "Create AI Question from Highlight"
+
 ## 🔧 Development
 
 This plugin is built with TypeScript and the Obsidian API.
@@ -80,11 +86,23 @@ npm run dev
 npm run build
 ```
 
+### Automated Releases
+This repository uses GitHub Actions for automated releases:
+
+- **Build & Test**: Runs on every push/PR to validate the code
+- **Release**: Automatically triggered when you push a git tag
+  ```bash
+  # Create and push a new version
+  git tag 1.0.1
+  git push origin 1.0.1
+  ```
+- The GitHub Action will automatically build and create a draft release with the required files
+
 ## 📝 Commands
 
-| Command | Description |
-|---------|-------------|
-| `Create AI Question from Highlight` | Converts selected text into a formatted Q&A page |
+| Command | Description | Default Hotkey |
+|---------|-------------|----------------|
+| `Create AI Question from Highlight` | Converts selected text into a formatted Q&A page | `Cmd+Shift+Q` (Mac)<br>`Ctrl+Shift+Q` (Windows/Linux) |
 
 ## 📁 File Structure
 
