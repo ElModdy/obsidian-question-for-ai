@@ -24,15 +24,13 @@ jobs:
         run: npm ci
         
       - name: Build plugin
-        run: npm run build
-        
-      - name: Create release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          tag="${GITHUB_REF#refs/tags/}"
-          
-          gh release create "$tag" \
-            --title="Release $tag" \
-            --draft \
-            main.js manifest.json styles.css
+        run: npm run build        - name: Create release
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+            tag="${GITHUB_REF#refs/tags/}"
+            
+            gh release create "$tag" \
+              --title="Release $tag" \
+              --generate-notes \
+              main.js manifest.json styles.css
