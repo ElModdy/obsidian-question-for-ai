@@ -40,7 +40,7 @@ export default class QuestionForAIPlugin extends Plugin {
 				await this.app.vault.create(filename, qaContent);
 
 				// Replace with link
-				const linkText = `[[${filename}|Q: ${sanitizedText.substring(0, 50)}${sanitizedText.length > 50 ? '...' : ''}]]`;
+				const linkText = `[[${filename}|Q: ${sanitizedText}]]`;
 				editor.replaceSelection(linkText);
 
 				new Notice(`AI Question created: ${filename}`);
