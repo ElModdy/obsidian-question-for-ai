@@ -6,7 +6,7 @@ export default class QuestionForAIPlugin extends Plugin {
 		this.addCommand({
 			id: 'create-ai-question',
 			name: 'Create AI Question from Highlight',
-			hotkeys: [{ modifiers: ['Mod', 'Shift'], key: 'q' }],
+			hotkeys: [{ modifiers: ['Ctrl', 'Shift'], key: 'q' }],
 			editorCallback: async (editor, view) => {
 				const selection = editor.getSelection();
 				if (!selection) {
@@ -39,11 +39,14 @@ export default class QuestionForAIPlugin extends Plugin {
 				// Create the new note
 				await this.app.vault.create(filename, qaContent);
 
-				// Replace with link
-				const linkText = `[[${filename}|Q: ${sanitizedText}]]`;
-				editor.replaceSelection(linkText);
+				// Copy question to clipboard for easy AI pasting
+				await navigator.clipboard.writeText(sanitizedText);
 
-				new Notice(`AI Question created: ${filename}`);
+				// Replace with formatted question and answer link
+				const formattedText = `**Q:** ${sanitizedText}\n**A:** [[${filename}|View Answer]]`;
+				editor.replaceSelection(formattedText);
+
+				new Notice(`AI Question created: ${filename} (copied to clipboard)`);
 			}
 		});
 	}

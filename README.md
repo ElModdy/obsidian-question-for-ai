@@ -5,7 +5,7 @@ Transform highlighted text into formatted Q&A pages, perfect for AI interactions
 ## 🚀 Features
 
 - **One-Click Q&A Creation**: Highlight any text and instantly create a formatted question page
-- **Keyboard Shortcut**: Quick access with `Cmd+Shift+Q` (Mac) or `Ctrl+Shift+Q` (Windows/Linux)
+- **Keyboard Shortcut**: Quick access with `Ctrl+Shift+Q` on all platforms
 - **AI-Ready Format**: Pages are pre-formatted with Question and Answer sections
 - **Preserves Formatting**: Maintains original whitespace and text formatting
 - **Stay Focused**: Remain on your current page while Q&A notes are created in the background
@@ -15,7 +15,7 @@ Transform highlighted text into formatted Q&A pages, perfect for AI interactions
 ## 📖 How It Works
 
 1. **Highlight** any text you want to ask an AI about
-2. **Press `Cmd+Shift+Q`** (or use Command Palette: "Create AI Question from Highlight")
+2. **Press `Ctrl+Shift+Q`** (or use Command Palette: "Create AI Question from Highlight")
 3. **Stay focused** on your current page while a formatted Q&A note is created
 4. **Click the generated link** when ready to add the AI's response
 
@@ -62,7 +62,7 @@ Your original text gets replaced with: `[[AIQA/Q-1719172245123.md|Q: What are th
 The plugin works out of the box with no configuration needed. All Q&A files are automatically organized in the `AIQA` folder.
 
 ### Keyboard Shortcut
-- **Default**: `Cmd+Shift+Q` (Mac) or `Ctrl+Shift+Q` (Windows/Linux)
+- **Default**: `Ctrl+Shift+Q` on all platforms
 - **Customize**: Settings → Hotkeys → Search for "Create AI Question from Highlight"
 
 ## 🔧 Development
@@ -102,7 +102,7 @@ This repository uses GitHub Actions for automated releases:
 
 | Command | Description | Default Hotkey |
 |---------|-------------|----------------|
-| `Create AI Question from Highlight` | Converts selected text into a formatted Q&A page | `Cmd+Shift+Q` (Mac)<br>`Ctrl+Shift+Q` (Windows/Linux) |
+| `Create AI Question from Highlight` | Converts selected text into a formatted Q&A page | `Ctrl+Shift+Q` |
 
 ## 📁 File Structure
 
