@@ -43,7 +43,7 @@ export default class QuestionForAIPlugin extends Plugin {
 				await navigator.clipboard.writeText(sanitizedText);
 
 				// Replace with formatted question and answer link
-				const formattedText = `**Q:** ${sanitizedText}\n**A:** [[${filename}|View Answer]]`;
+				const formattedText = `**Q:** ${sanitizedText} **A:** [[${filename}|View Answer]]`;
 				editor.replaceSelection(formattedText);
 
 				new Notice(`AI Question created: ${filename} (copied to clipboard)`);
